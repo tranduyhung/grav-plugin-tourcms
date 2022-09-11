@@ -27,3 +27,15 @@ form:
         0: PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
+    marketplace_account_id:
+      type: text
+      label: PLUGIN_TOURCMS.MARKETPLACE_ACCOUNT_ID
+      description: PLUGIN_TOURCMS.MARKETPLACE_ACCOUNT_ID_DESC
+    channel_id:
+      type: text
+      label: PLUGIN_TOURCMS.CHANNEL_ID
+      description: PLUGIN_TOURCMS.CHANNEL_ID_DESC
+    api_private_key:
+      type: text
+      label: PLUGIN_TOURCMS.API_PRIVATE_KEY
+      description: PLUGIN_TOURCMS.API_PRIVATE_KEY_DESC
