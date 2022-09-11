@@ -1,0 +1,34 @@
+{
+    "name": "tranduyhung/grav-plugin-tourcms",
+    "description": "Grav plugin for tourcms.com integration",
+    "type": "grav-plugin",
+    "keywords": ["grav", "gravcms", "plugin", "tourcms","tour","activity","booking","calendar"],
+    "homepage": "https://github.com/tranduyhung/grav-plugin-tourcms",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hung Tran",
+            "email": "flatfiledeveloper@gmail.com",
+            "homepage": "https://flatfiledeveloper.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/tranduyhung/grav-plugin-tourcms/issues",
+        "docs": "https://github.com/tranduyhung/grav-plugin-tourcms/blob/main/README.md"
+    },
+    "require": {
+        "php": "^7.3.6 || ^8.0",
+        "tourcms/tourcms-php": "^3.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Grav\\Plugin\\TourCMS\\":"classes/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.3.6"
+        }
+    }
+}

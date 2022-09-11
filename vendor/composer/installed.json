@@ -1,0 +1,61 @@
+{
+    "packages": [
+        {
+            "name": "tourcms/tourcms-php",
+            "version": "v3.9.2",
+            "version_normalized": "3.9.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TourCMS/tourcms-php.git",
+                "reference": "13c9045b77f8e21cdfb104e6eb02481366c3339f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TourCMS/tourcms-php/zipball/13c9045b77f8e21cdfb104e6eb02481366c3339f",
+                "reference": "13c9045b77f8e21cdfb104e6eb02481366c3339f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "time": "2022-06-29T08:39:15+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2.x-dev",
+                    "dev-v1.x": "1.9.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "TourCMS\\Utils\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "TourCMS",
+                    "email": "support@tourcms.com",
+                    "homepage": "http://www.tourcms.com"
+                }
+            ],
+            "description": "TourCMS API wrapper for PHP",
+            "homepage": "https://github.com/TourCMS/tourcms-php",
+            "keywords": [
+                "api",
+                "tourcms"
+            ],
+            "support": {
+                "issues": "https://github.com/TourCMS/tourcms-php/issues",
+                "source": "https://github.com/TourCMS/tourcms-php/tree/v3.9.2"
+            },
+            "install-path": "../tourcms/tourcms-php"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

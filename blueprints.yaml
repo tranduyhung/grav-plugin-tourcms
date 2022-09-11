@@ -1,0 +1,29 @@
+name: TourCMS
+slug: tourcms
+type: plugin
+version: 0.0.1
+description: Integrate TourCMS's tours into Grav
+icon: calendar
+author:
+  name: Hung Tran
+  email: flatfiledeveloper@gmail.com
+  url: https://flatfiledeveloper.com
+homepage: https://github.com/tranduyhung/grav-plugin-tourcms
+keywords: plugin, tourcms, tour, activity, booking, calendar
+bugs: https://github.com/tranduyhung/grav-plugin-tourcms/issues
+docs: https://github.com/tranduyhung/grav-plugin-tourcms/blob/main/README.md
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
