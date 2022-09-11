@@ -1,0 +1,24 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block titlebar %}
+  <div class="button-bar">
+    <a class="button" href="{{ base_url }}"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
+  </div>
+  <h1 class="cloudflare-title"><i class="fa fa-fw fa-calendar"></i> {{ "PLUGIN_TOURCMS.TITLE"|tu }}</h1>
+{% endblock %}
+
+{% block content %}
+  <div class="content-padding">
+    <h2>{{ 'PLUGIN_TOURCMS.RATE_LIMIT_HEADING'|t }}</h2>
+    {% if not tourcms_error %}
+    <p>{{ 'PLUGIN_TOURCMS.RATE_LIMIT_RESULT'|t(tourcms_remaining_hits, tourcms_hourly_limit) }}</p>
+    {% else %}
+    <p>
+      {{ 'PLUGIN_TOURCMS.API_ERROR'|t }}
+      {% if tourcms_error_message %}
+        <br>{{ 'PLUGIN_TOURCMS.API_ERROR_DETAIL'|t(tourcms_error_message) }}
+      {% endif %}
+    </p>
+    {% endif %}
+  </div>
+{% endblock %}

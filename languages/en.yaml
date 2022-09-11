@@ -1,7 +1,12 @@
 PLUGIN_TOURCMS:
+  TITLE: TourCMS
   MARKETPLACE_ACCOUNT_ID: Marketplace Account ID
   MARKETPLACE_ACCOUNT_ID_DESC: If you are an affiliates / travel agent.
   CHANNEL_ID: Channel ID
   CHANNEL_ID_DESC: If you are tour operator / supplier.
   API_PRIVATE_KEY: API Private Key
   API_PRIVATE_KEY_DESC: Log in to tourcms.com to get your API key.
+  RATE_LIMIT_RESULT: "%s of %s hits remaining this hour."
+  RATE_LIMIT_HEADING: API Rate Limit Status
+  API_ERROR: "Unable to connect to TourCMS API."
+  API_ERROR_DETAIL: "Error: %s."
