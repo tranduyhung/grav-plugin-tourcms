@@ -1,12 +1,159 @@
 PLUGIN_TOURCMS:
   TITLE: TourCMS
   MARKETPLACE_ACCOUNT_ID: Marketplace Account ID
-  MARKETPLACE_ACCOUNT_ID_DESC: If you are an affiliates / travel agent.
+  MARKETPLACE_ACCOUNT_ID_HELP: If you are an affiliates / travel agent.
   CHANNEL_ID: Channel ID
-  CHANNEL_ID_DESC: If you are tour operator / supplier.
+  CHANNEL_ID_HELP: If you are tour operator / supplier.
   API_PRIVATE_KEY: API Private Key
-  API_PRIVATE_KEY_DESC: Log in to tourcms.com to get your API key.
+  API_PRIVATE_KEY_HELP: Log in to tourcms.com to get your API key.
   RATE_LIMIT_RESULT: "%s of %s hits remaining this hour."
   RATE_LIMIT_HEADING: API Rate Limit Status
   API_ERROR: "Unable to connect to TourCMS API."
   API_ERROR_DETAIL: "Error: %s."
+  'YES': 'Yes'
+  'NO': 'No'
+  'ON': 'On'
+  'OFF': 'Off'
+  BLUEPRINT:
+    TAB_TITLE: TourCMS
+    FOR_MARKETPLACE_AGENT: For Marketplace Agent
+    FOR_TOUR_OPERATOR: For Tour Operator
+    PER_PAGE: Result Limit
+    PER_PAGE_HELP: Number of results to return per page. Default is 75, max is 200.
+    ORDER: Order
+    ORDER_TOUR_NAME: Tour name
+    ORDER_COOM: Commercial priority
+    ORDER_DATE_SOONEST: Departure date
+    ORDER_DISPLAY_POINTS_UP: Display points ascending
+    ORDER_DISPLAY_POINTS_DOWN: Display points descending
+    ORDER_DURATION_UP: Duration ascending
+    ORDER_DURATION_DOWN: Duration descending
+    ORDER_PRICE_UP: Price ascending
+    ORDER_PRICE_DOWN: Price descending
+    ORDER_OFFER_RECENT: Most recent created offers
+    ORDER_OFFER_SOONEST: Soonest offers
+    ORDER_CREATED_RECENT: Most recent created tours
+    TOUR_ID: Tour IDs
+    TOUR_ID_HELP: 'Only show results from provided tour IDs.'
+    NOT_TOUR_ID: Excluded Tour IDs
+    NOT_TOUR_ID_HELP: 'Not show results from provided tour IDs.'
+    CHANNEL_ID_TOUR_ID: Channel IDs And Tour IDs
+    CHANNEL_ID_TOUR_ID_HELP: 'Only show results from tour IDs in channel IDs.'
+    CHANNEL_ID_TOUR_ID_CHANNEL: Channel ID
+    CHANNEL_ID_TOUR_ID_TOUR: Tour ID
+    NOT_CHANNEL_ID_TOUR_ID: Excluded Channel IDs And Tour IDs
+    NOT_CHANNEL_ID_TOUR_ID_HELP: 'Not show results from tour IDs in channel IDs.'
+    BOOKING_STYLE: Booking
+    BOOKING_STYLE_HELP: Show results from all channels or only channels which take confirmed online bookings.
+    BOOKING_STYLE_ALL: Show from all channels
+    BOOKING_STYLE_BOOKING: Show only channels taking confirmed online bookings
+    K: Keyword 1
+    K_HELP: Match against tour name, location, short description, summary, tour code.
+    K2: Keyword 2
+    K2_HELP: Match against tour name, location, short description, summary, tour code.
+    K3: Keyword 3
+    K3_HELP: Match against tour name, location, short description, summary, tour code.
+    K_TYPE:  Keyword Type
+    K_TYPE_HELP: Match all keywords or only match one of them.
+    K_TYPE_AND: Match all keywords
+    K_TYPE_OR: Match any keyword
+    LOCATION: Location
+    LOCATION_HELP: Search by primary location.
+    LAT: Latitude
+    LAT_HELP: Latitude of search point
+    LONG: Longitude
+    LONG_HELP: Longitude of search point
+    GEO_TYPE: Search By Tour Start Point Or End Point
+    GEO_TYPE_HELP: Search by tour start point or tour end point.
+    GEO_UNIT: Search Unit
+    GEO_UNIT_HELP: Search in kilometres or in miles.
+    GEO_UNIT_MILES: Miles
+    GEO_UNIT_KILOMETERS: Kilometres
+    GEO_DISTANCE: Search Distance
+    GEO_DISTANCE_HELP: Search distance in provided search unit (kilometres or miles)
+    HAS_SALE: Has Sale
+    HAS_SALE_HELP: Show all tours or only tours which have at least one bookable date in future.
+    HAS_SALE_ALL: All tours
+    HAS_SALE_DEFAULT: Only tours having at least one bookable date
+    HAS_OFFER: Has Offer
+    HAS_OFFER_HELP: Show all tours or only tours which have special offer/deal.
+    HAS_SALE_MONTH: Sale Months
+    HAS_SALE_MONTH_HELP: Only show tours which have sale in these months.
+    START_DATE: Start Date
+    START_DATE_HELP: Show tours start on a specific date.
+    START_DATE_START: Start Date From
+    START_DATE_START_HELP: Show tours start on a range of dates.
+    START_DATE_END: Start Date To
+    START_DATE_END_HELP: Show tours start on a range of dates.
+    BETWEEN_DATE_START: Available From
+    BETWEEN_DATE_START_HELP: Show tours available between 2 dates.
+    BETWEEN_DATE_END: Available To
+    BETWEEN_DATE_END_HELP: Show tours available between 2 dates.
+    DURATION_MIN: Minimum  Days
+    DURATION_MIN_HELP: Search by tour duration (days).
+    DURATION_MAX: Maximum Days
+    DURATION_MAX_HELP: Search by tour duration (days).
+    PRICE_RANGE_MIN: Minimum From Price
+    PRICE_RANGE_MIN_HELP: Filter tours by From price.
+    PRICE_RANGE_MAX: Maximum From Price
+    PRICE_RANGE_MAX_HELP: Filter tours by From price.
+    PRICE_RANGE_CURRENCY: Price Currency
+    PRICE_RANGE_CURRENCY_HELP: Currency of minimum and maximum From price.
+    MIN_PRIORITY: Minimum Commercial Priority.
+    MIN_PRIORITY_MEDIUM_HIGH: Medium and High
+    MIN_PRIORITY_HIGH: High
+    COUNTRY: Country
+    COUNTRY_HELP: Search by country - two letter ISO country code.
+    NOT_COUNTRY: Excluded Country
+    NOT_COUNTRY_HELP: EXCLUDE results featuring this country - two letter ISO country code
+    ACCOM: Only Return Tours That Include Accommodation
+    ACCOM_HELP: Handy if you are featuring tours / activities on a hotel website.
+    NOT_ACCOM: Exclude Tours That Include Accommodation
+    NOT_ACCOM_HELP: Handy if you are featuring tours / activities on a hotel website.
+    ACCOMRATING: Accommodation Rating
+    ACCOMRATING_HELP: Search by accommodation rating (number).
+    PRODUCT_TYPE: Search By Product Type
+    PRODUCT_TYPE_1: Accommodation (hotel / campsite / villa / ski chalet / lodge)
+    PRODUCT_TYPE_2: Transport / transfer
+    PRODUCT_TYPE_3: Tour / cruise including overnight stay
+    PRODUCT_TYPE_4: Day tour / trip/ activity / attraction (No overnight stay)
+    PRODUCT_TYPE_5: Tailor made
+    PRODUCT_TYPE_6: Event
+    PRODUCT_TYPE_7: Training/education
+    PRODUCT_TYPE_8: Other
+    PRODUCT_TYPE_9: Restaurant / Meal alternative
+    GRADE: Search By Grade
+    TOURLEADER_TYPE: Search By Tour Leader Type
+    TOURLEADER_TYPE_1: Tour guide / driver
+    TOURLEADER_TYPE_2: Independent / self drive
+    TOURLEADER_TYPE_3: Not applicable (e.g. accommodation / event)
+    SUITABLE_FOR_SOLO: Suitable For Solo Traveller
+    SUITABLE_FOR_COUPLES: Suitable For Couples
+    SUITABLE_FOR_CHILDREN: Suitable For Children
+    SUITABLE_FOR_GROUPS: Suitable For Groups
+    SUITABLE_FOR_STUDENTS: Suitable For Students
+    SUITABLE_FOR_BUSINESS: Suitable For Business Travellers
+    SUITABLE_FOR_WHEELCHAIRS: Suitable For Wheelchairs
+    HEALTH_AND_SAFETY_DETAILS: Has Health And Safety Details
+    HEALTH_AND_SAFETY_DETAILS_HELP: Set to Yes to return only tours where some extended health & safety checklist information has been provided.
+    CURRENCY: Currency
+    CURRENCY_HELP: 3 letter upper case currency code (USD / EUR / GBP etc). Only bring back products selling in a particular currency. This is a filter to reduce products shown not an application of an exchange rate.
+    LANG: Language
+    LANG_HELP: Language that the tour description is loaded in. By default will return all products. If you just want tours loaded in the English language set to "en".
+    LANG_SPOKEN: Languages Spoken
+    LANG_SPOKEN_HELP: Languages spoken on the tour. Most commonly loaded for attractions that have audio guides or operate specific language groups. This is a relatively new field and not all tours will have it configured. Generally speaking we would not rely on using this search parameter currently, instead you may wish to just display the languages spoken where returned.
+    VIDEO_SERVICE: Has Video Service
+    VIDEO_SERVICE_HELP: Search for only tours that have a video, or have a video hosted by a particular service.
+    VIDEO_SERVICE_DEFAULT: All tours regardless of whether they have video or not
+    VIDEO_SERVICE_ALL: Just tours with videos (hosted anywhere)
+    VIDEO_SERVICE_VIMEO: Just tours with videos hosted by Vimeo
+    VIDEO_SERVICE_YOUTUBE: Just tours with videos hosted by YouTube
+    QC: Quality Control
+    QC_HELP: 'Enable/disable "Quality control". Quality control can be switched on/off (default is off) within the Agent control panel and also overriden using this option. This setting has no impact when a tour operator uses this API method on their own website.<br>Quality control explanation: If you are a web affiliate sending traffic through to the suppliers website then turn quality control on to only return tours where TourCMS is confident web tracking of bookings is in place. If - rather than sending traffic to the suppliers website - you are using the API to input web bookings or enquiries then you don''t need to worry about leakage via insufficient web tracking, hence can leave the quality control off. Also ensures tours meet certain image and description length criteria.'
+    CATEGORY: Search In Categories
+    CATEGORY_TYPE: Category Combination
+    CATEGORY_TYPE_HELP: Match all categories provided in category Search In Category option or only match one of them.
+    CATEGORY_TYPE_AND: Match all categories
+    CATEGORY_TYPE_OR: Match any category
+    EXCLUDED_CATEGORY: Excluded Categories
+    EXCLUDED_CATEGORY_HELP: Tours in these categories are not returned.

@@ -16,10 +16,10 @@ class TourCMSPlugin extends Plugin
     /**
      * @return array
      */
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
-            'onPluginsInitialized'      =>[
+            'onPluginsInitialized' => [
                 ['autoload', 100001],
                 ['onPluginsInitialized', 1001]
             ],
@@ -42,16 +42,18 @@ class TourCMSPlugin extends Plugin
         if (!$this->isAdmin())
         {
             $this->enable([
-                'onTwigSiteVariables' => ['onTwigSiteVariables', 0],
+                'onTwigSiteVariables'   => ['onTwigSiteVariables', 0],
                 'onTwigTemplatePaths'   => ['onTwigSiteTemplatePaths', 0],
             ]);
         }
         else
         {
             $this->enable([
-                'onAdminMenu' => ['onAdminMenu', 0],
-                'onTwigSiteVariables' => ['onTwigAdminVariables', 0],
+                'onAdminMenu'           => ['onAdminMenu', 0],
+                'onTwigSiteVariables'   => ['onTwigAdminVariables', 0],
                 'onTwigTemplatePaths'   => ['onTwigAdminTemplatePaths', 0],
+                'onGetPageTemplates'    => ['onGetPageTemplates', 0],
+                'onGetPageBlueprints'   => ['onGetPageBlueprints', 0],
             ]);
         }
     }
@@ -124,6 +126,15 @@ class TourCMSPlugin extends Plugin
     }
 
     /**
+     * Load our templates.
+     */
+    public function onGetPageTemplates(Event $event): void
+    {
+        $types = $event->types;
+        $types->scanTemplates('plugins://' . $this->name . '/templates');
+    }
+
+    /**
      * Add Twig variables for front-end
      */
     public function onTwigSiteVariables(Event $event = null): void
@@ -138,4 +149,14 @@ class TourCMSPlugin extends Plugin
     {
         $this->grav['twig']->twig_paths[] = __DIR__ . '/templates';
     }
+
+    /**
+     * Load our blueprints.
+     */
+    public function onGetPageBlueprints(Event $event): void
+    {
+        $types = $event->types;
+        $types->scanBlueprints('plugin://' . $this->name . '/blueprints');
+    }
+
 }

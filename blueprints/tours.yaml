@@ -1,0 +1,440 @@
+title: Tours
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        tourcms:
+          title: PLUGIN_TOURCMS.BLUEPRINT.TAB_TITLE
+          type: tab
+          fields:
+            marketplace_agent:
+              type: section
+              title: PLUGIN_TOURCMS.BLUEPRINT.FOR_MARKETPLACE_AGENT
+              underline: true
+              fields:
+                header.per_page:
+                  type: number
+                  label: PLUGIN_TOURCMS.BLUEPRINT.PER_PAGE
+                  help: PLUGIN_TOURCMS.BLUEPRINT.PER_PAGE_HELP
+                  default: 75
+                  validate:
+                    min: 1
+                    max: 200
+                    step: 1
+
+                header.order:
+                  type: select
+                  label: PLUGIN_TOURCMS.BLUEPRINT.ORDER
+                  classes: fancy
+                  default: 'comm'
+                  options:
+                    tour_name: PLUGIN_TOURCMS.BLUEPRINT.ORDER_TOUR_NAME
+                    comm: PLUGIN_TOURCMS.BLUEPRINT.ORDER_COOM
+                    date_soonest: PLUGIN_TOURCMS.BLUEPRINT.ORDER_DATE_SOONEST
+                    display_points_up: PLUGIN_TOURCMS.BLUEPRINT.ORDER_DISPLAY_POINTS_UP
+                    display_points_down: PLUGIN_TOURCMS.BLUEPRINT.ORDER_DISPLAY_POINTS_DOWN
+                    duration_up: PLUGIN_TOURCMS.BLUEPRINT.ORDER_DURATION_UP
+                    duration_down: PLUGIN_TOURCMS.BLUEPRINT.ORDER_DURATION_DOWN
+                    price_up: PLUGIN_TOURCMS.BLUEPRINT.ORDER_PRICE_UP
+                    price_down: PLUGIN_TOURCMS.BLUEPRINT.ORDER_PRICE_DOWN
+                    offer_recent: PLUGIN_TOURCMS.BLUEPRINT.ORDER_OFFER_RECENT
+                    offer_soonest: PLUGIN_TOURCMS.BLUEPRINT.ORDER_OFFER_SOONEST
+                    created_recent: PLUGIN_TOURCMS.BLUEPRINT.ORDER_CREATED_RECENT
+
+                header.tour_id:
+                  type: array
+                  label: PLUGIN_TOURCMS.BLUEPRINT.TOUR_ID
+                  help: PLUGIN_TOURCMS.BLUEPRINT.TOUR_ID_HELP
+                  value_only: true
+
+                header.not_tour_id:
+                  type: array
+                  label: PLUGIN_TOURCMS.BLUEPRINT.NOT_TOUR_ID
+                  help: PLUGIN_TOURCMS.BLUEPRINT.NOT_TOUR_ID_HELP
+                  value_only: true
+
+                header.channel_id_tour_id:
+                  type: array
+                  label: PLUGIN_TOURCMS.BLUEPRINT.CHANNEL_ID_TOUR_ID
+                  help: PLUGIN_TOURCMS.BLUEPRINT.CHANNEL_ID_TOUR_ID_HELP
+                  placeholder_key: PLUGIN_TOURCMS.BLUEPRINT.CHANNEL_ID_TOUR_ID_CHANNEL
+                  placeholder_value: PLUGIN_TOURCMS.BLUEPRINT.CHANNEL_ID_TOUR_ID_TOUR
+
+                header.not_channel_id_tour_id:
+                  type: array
+                  label: PLUGIN_TOURCMS.BLUEPRINT.NOT_CHANNEL_ID_TOUR_ID
+                  help: PLUGIN_TOURCMS.BLUEPRINT.NOT_CHANNEL_ID_TOUR_ID_HELP
+                  placeholder_key: PLUGIN_TOURCMS.BLUEPRINT.CHANNEL_ID_TOUR_ID_CHANNEL
+                  placeholder_value: PLUGIN_TOURCMS.BLUEPRINT.CHANNEL_ID_TOUR_ID_TOUR
+
+                header.booking_style:
+                  type: radio
+                  label: PLUGIN_TOURCMS.BLUEPRINT.BOOKING_STYLE
+                  help: PLUGIN_TOURCMS.BLUEPRINT.BOOKING_STYLE_HELP
+                  default: ''
+                  options:
+                    '': PLUGIN_TOURCMS.BLUEPRINT.BOOKING_STYLE_ALL
+                    'booking': PLUGIN_TOURCMS.BLUEPRINT.BOOKING_STYLE_BOOKING
+
+                header.k:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.K
+                  help: PLUGIN_TOURCMS.BLUEPRINT.K_HELP
+
+                header.k2:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.K2
+                  help: PLUGIN_TOURCMS.BLUEPRINT.K2_HELP
+
+                header.k3:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.K3
+                  help: PLUGIN_TOURCMS.BLUEPRINT.K3_HELP
+
+                header.k_type:
+                  type: radio
+                  label: PLUGIN_TOURCMS.BLUEPRINT.K_TYPE
+                  help: PLUGIN_TOURCMS.BLUEPRINT.K_TYPE_HELP
+                  default: or
+                  options:
+                    or: PLUGIN_TOURCMS.BLUEPRINT.K_TYPE_OR
+                    and: PLUGIN_TOURCMS.BLUEPRINT.K_TYPE_AND
+
+                header.location:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.LOCATION
+                  help: PLUGIN_TOURCMS.BLUEPRINT.LOCATION_HELP
+
+                header.lat:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.LAT
+                  help: PLUGIN_TOURCMS.BLUEPRINT.LAT_HELP
+
+                header.long:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.LONG
+                  help: PLUGIN_TOURCMS.BLUEPRINT.LONG_HELP
+
+                header.geo_type:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.GEO_TYPE
+                  help: PLUGIN_TOURCMS.BLUEPRINT.GEO_TYPE_HELP
+
+                header.geo_unit:
+                  type: radio
+                  label: PLUGIN_TOURCMS.BLUEPRINT.GEO_UNIT
+                  help: PLUGIN_TOURCMS.BLUEPRINT.GEO_UNIT_HELP
+                  default: ''
+                  options:
+                    '': PLUGIN_TOURCMS.BLUEPRINT.GEO_UNIT_MILES
+                    'km': PLUGIN_TOURCMS.BLUEPRINT.GEO_UNIT_KILOMETERS
+
+                header.geo_distance:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.GEO_DISTANCE
+                  help: PLUGIN_TOURCMS.BLUEPRINT.GEO_DISTANCE_HELP
+
+                header.has_sale:
+                  type: radio
+                  label: PLUGIN_TOURCMS.BLUEPRINT.HAS_SALE
+                  help: PLUGIN_TOURCMS.BLUEPRINT.HAS_SALE_HELP
+                  default: all
+                  options:
+                    '': PLUGIN_TOURCMS.BLUEPRINT.HAS_SALE_DEFAULT
+                    'all': PLUGIN_TOURCMS.BLUEPRINT.HAS_SALE_ALL
+
+                header.has_offer:
+                  type: toggle
+                  highlight: 1
+                  label: PLUGIN_TOURCMS.BLUEPRINT.HAS_OFFER
+                  help: PLUGIN_TOURCMS.BLUEPRINT.HAS_OFFER_HELP
+                  default: 0
+                  options:
+                    '1': PLUGIN_TOURCMS.YES
+                    '0': PLUGIN_TOURCMS.NO
+
+                header.has_sale_month:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.HAS_SALE_MONTH
+                  help: PLUGIN_TOURCMS.BLUEPRINT.HAS_SALE_MONTH_HELP
+
+                header.start_date:
+                  type: datetime
+                  format: Y-m-d
+                  label: PLUGIN_TOURCMS.BLUEPRINT.START_DATE
+                  help: PLUGIN_TOURCMS.BLUEPRINT.START_DATE_HELP
+
+                header.start_date_start:
+                  type: datetime
+                  format: Y-m-d
+                  label: PLUGIN_TOURCMS.BLUEPRINT.START_DATE_START
+                  help: PLUGIN_TOURCMS.BLUEPRINT.START_DATE_START_HELP
+
+                header.start_date_end:
+                  type: datetime
+                  format: Y-m-d
+                  label: PLUGIN_TOURCMS.BLUEPRINT.START_DATE_END
+                  help: PLUGIN_TOURCMS.BLUEPRINT.START_DATE_END_HELP
+
+                header.between_date_start:
+                  type: datetime
+                  format: Y-m-d
+                  label: PLUGIN_TOURCMS.BLUEPRINT.BETWEEN_DATE_START
+                  help: PLUGIN_TOURCMS.BLUEPRINT.BETWEEN_DATE_START_HELP
+
+                header.between_date_end:
+                  type: datetime
+                  format: Y-m-d
+                  label: PLUGIN_TOURCMS.BLUEPRINT.BETWEEN_DATE_END
+                  help: PLUGIN_TOURCMS.BLUEPRINT.BETWEEN_DATE_END_HELP
+
+                header.duration_min:
+                  type: number
+                  label: PLUGIN_TOURCMS.BLUEPRINT.DURATION_MIN
+                  help: PLUGIN_TOURCMS.BLUEPRINT.DURATION_MIN_HELP
+                  validate:
+                    min: 1
+                    step: 1
+
+                header.duration_max:
+                  type: number
+                  label: PLUGIN_TOURCMS.BLUEPRINT.DURATION_MAX
+                  help: PLUGIN_TOURCMS.BLUEPRINT.DURATION_MAX_HELP
+                  validate:
+                    min: 1
+                    step: 1
+
+                header.price_range_min:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.PRICE_RANGE_MIN
+                  help: PLUGIN_TOURCMS.BLUEPRINT.PRICE_RANGE_MIN_HELP
+
+                header.price_range_max:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.PRICE_RANGE_MAX
+                  help: PLUGIN_TOURCMS.BLUEPRINT.PRICE_RANGE_MAX_HELP
+
+                header.price_range_currency:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.PRICE_RANGE_CURRENCY
+                  help: PLUGIN_TOURCMS.BLUEPRINT.PRICE_RANGE_CURRENCY_HELP
+
+                header.min_priority:
+                  type: radio
+                  label: PLUGIN_TOURCMS.BLUEPRINT.MIN_PRIORITY
+                  default: 'medium'
+                  options:
+                    medium: PLUGIN_TOURCMS.BLUEPRINT.MIN_PRIORITY_MEDIUM_HIGH
+                    high: PLUGIN_TOURCMS.BLUEPRINT.MIN_PRIORITY_HIGH
+
+                header.country:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.COUNTRY
+                  help: PLUGIN_TOURCMS.BLUEPRINT.COUNTRY_HELP
+
+                header.not_country:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.NOT_COUNTRY
+                  help: PLUGIN_TOURCMS.BLUEPRINT.NOT_COUNTRY_HELP
+
+                header.accom:
+                  type: toggle
+                  highlight: 1
+                  label: PLUGIN_TOURCMS.BLUEPRINT.ACCOM
+                  help: PLUGIN_TOURCMS.BLUEPRINT.ACCOM_HELP
+                  default: 0
+                  options:
+                    '1': PLUGIN_TOURCMS.YES
+                    '0': PLUGIN_TOURCMS.NO
+
+                header.not_accom:
+                  type: toggle
+                  highlight: 1
+                  label: PLUGIN_TOURCMS.BLUEPRINT.NOT_ACCOM
+                  help: PLUGIN_TOURCMS.BLUEPRINT.NOT_ACCOM_HELP
+                  default: 0
+                  options:
+                    '1': PLUGIN_TOURCMS.YES
+                    '0': PLUGIN_TOURCMS.NO
+
+                header.accomrating:
+                  type: array
+                  label: PLUGIN_TOURCMS.BLUEPRINT.ACCOMRATING
+                  help: PLUGIN_TOURCMS.BLUEPRINT.ACCOMRATING_HELP
+                  value_only: true
+
+                header.product_type:
+                  type: select
+                  multiple: true
+                  label: PLUGIN_TOURCMS.BLUEPRINT.PRODUCT_TYPE
+                  options:
+                    1: PLUGIN_TOURCMS.BLUEPRINT.PRODUCT_TYPE_1
+                    2: PLUGIN_TOURCMS.BLUEPRINT.PRODUCT_TYPE_2
+                    3: PLUGIN_TOURCMS.BLUEPRINT.PRODUCT_TYPE_3
+                    4: PLUGIN_TOURCMS.BLUEPRINT.PRODUCT_TYPE_4
+                    5: PLUGIN_TOURCMS.BLUEPRINT.PRODUCT_TYPE_5
+                    6: PLUGIN_TOURCMS.BLUEPRINT.PRODUCT_TYPE_6
+                    7: PLUGIN_TOURCMS.BLUEPRINT.PRODUCT_TYPE_7
+                    8: PLUGIN_TOURCMS.BLUEPRINT.PRODUCT_TYPE_8
+                    9: PLUGIN_TOURCMS.BLUEPRINT.PRODUCT_TYPE_9
+
+                header.grade:
+                  type: checkboxes
+                  label: PLUGIN_TOURCMS.BLUEPRINT.GRADE
+                  use: keys
+                  options:
+                    1: 1
+                    2: 2
+                    3: 3
+                    4: 4
+                    5: 5
+
+                header.tourleader_type:
+                  type: select
+                  multiple: true
+                  label: PLUGIN_TOURCMS.BLUEPRINT.TOURLEADER_TYPE
+                  options:
+                    1: PLUGIN_TOURCMS.BLUEPRINT.TOURLEADER_TYPE_1
+                    2: PLUGIN_TOURCMS.BLUEPRINT.TOURLEADER_TYPE_2
+                    3: PLUGIN_TOURCMS.BLUEPRINT.TOURLEADER_TYPE_3
+
+                header.suitable_for_solo:
+                  type: toggle
+                  highlight: 1
+                  label: PLUGIN_TOURCMS.BLUEPRINT.SUITABLE_FOR_SOLO
+                  default: 1
+                  options:
+                    '1': PLUGIN_TOURCMS.YES
+                    '0': PLUGIN_TOURCMS.NO
+
+                header.suitable_for_couples:
+                  type: toggle
+                  highlight: 1
+                  label: PLUGIN_TOURCMS.BLUEPRINT.SUITABLE_FOR_COUPLES
+                  default: 1
+                  options:
+                    '1': PLUGIN_TOURCMS.YES
+                    '0': PLUGIN_TOURCMS.NO
+
+                header.suitable_for_children:
+                  type: toggle
+                  highlight: 1
+                  label: PLUGIN_TOURCMS.BLUEPRINT.SUITABLE_FOR_CHILDREN
+                  default: 1
+                  options:
+                    '1': PLUGIN_TOURCMS.YES
+                    '0': PLUGIN_TOURCMS.NO
+
+                header.suitable_for_groups:
+                  type: toggle
+                  highlight: 1
+                  label: PLUGIN_TOURCMS.BLUEPRINT.SUITABLE_FOR_GROUPS
+                  default: 1
+                  options:
+                    '1': PLUGIN_TOURCMS.YES
+                    '0': PLUGIN_TOURCMS.NO
+
+                header.suitable_for_students:
+                  type: toggle
+                  highlight: 1
+                  label: PLUGIN_TOURCMS.BLUEPRINT.SUITABLE_FOR_STUDENTS
+                  default: 1
+                  options:
+                    '1': PLUGIN_TOURCMS.YES
+                    '0': PLUGIN_TOURCMS.NO
+
+                header.suitable_for_business:
+                  type: toggle
+                  highlight: 1
+                  label: PLUGIN_TOURCMS.BLUEPRINT.SUITABLE_FOR_BUSINESS
+                  default: 1
+                  options:
+                    '1': PLUGIN_TOURCMS.YES
+                    '0': PLUGIN_TOURCMS.NO
+
+                header.suitable_for_wheelchairs:
+                  type: toggle
+                  highlight: 1
+                  label: PLUGIN_TOURCMS.BLUEPRINT.SUITABLE_FOR_WHEELCHAIRS
+                  default: 1
+                  options:
+                    '1': PLUGIN_TOURCMS.YES
+                    '0': PLUGIN_TOURCMS.NO
+
+                header.health_and_safety_details:
+                  type: toggle
+                  highlight: 1
+                  label: PLUGIN_TOURCMS.BLUEPRINT.HEALTH_AND_SAFETY_DETAILS
+                  help: PLUGIN_TOURCMS.BLUEPRINT.HEALTH_AND_SAFETY_DETAILS_HELP
+                  default: 1
+                  options:
+                    '1': PLUGIN_TOURCMS.YES
+                    '0': PLUGIN_TOURCMS.NO
+
+                header.currency:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.CURRENCY
+                  help: PLUGIN_TOURCMS.BLUEPRINT.CURRENCY_HELP
+
+                header.lang:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.LANG
+                  help: PLUGIN_TOURCMS.BLUEPRINT.LANG_HELP
+
+                header.lang_spoken:
+                  type: text
+                  label: PLUGIN_TOURCMS.BLUEPRINT.LANG_SPOKEN
+                  help: PLUGIN_TOURCMS.BLUEPRINT.LANG_SPOKEN_HELP
+
+                header.video_service:
+                  type: select
+                  label: PLUGIN_TOURCMS.BLUEPRINT.VIDEO_SERVICE
+                  help: PLUGIN_TOURCMS.BLUEPRINT.VIDEO_SERVICE_HELP
+                  default: ''
+                  options:
+                    '': PLUGIN_TOURCMS.BLUEPRINT.VIDEO_SERVICE_DEFAULT
+                    all: PLUGIN_TOURCMS.BLUEPRINT.VIDEO_SERVICE_ALL
+                    vimeo: PLUGIN_TOURCMS.BLUEPRINT.VIDEO_SERVICE_VIMEO
+                    youtube: PLUGIN_TOURCMS.BLUEPRINT.VIDEO_SERVICE_YOUTUBE
+
+                header.qc:
+                  type: toggle
+                  highlight: 'on'
+                  label: PLUGIN_TOURCMS.BLUEPRINT.QC
+                  help: PLUGIN_TOURCMS.BLUEPRINT.QC_HELP
+                  default: 'off'
+                  options:
+                    'on': PLUGIN_TOURCMS.ON
+                    'off': PLUGIN_TOURCMS.OFF
+
+            tour_operator:
+              type: section
+              title: PLUGIN_TOURCMS.BLUEPRINT.FOR_TOUR_OPERATOR
+              underline: true
+              fields:
+                header.category:
+                  type: array
+                  label: PLUGIN_TOURCMS.BLUEPRINT.CATEGORY
+                  help: PLUGIN_TOURCMS.BLUEPRINT.CATEGORY_HELP
+                  value_only: true
+
+                header.category_type:
+                  type: radio
+                  label: PLUGIN_TOURCMS.BLUEPRINT.CATEGORY_TYPE
+                  help: PLUGIN_TOURCMS.BLUEPRINT.CATEGORY_TYPE_HELP
+                  default: or
+                  options:
+                    or: PLUGIN_TOURCMS.BLUEPRINT.CATEGORY_TYPE_OR
+                    and: PLUGIN_TOURCMS.BLUEPRINT.CATEGORY_TYPE_AND
+
+                header.excluded_category:
+                  type: array
+                  label: PLUGIN_TOURCMS.BLUEPRINT.EXCLUDED_CATEGORY
+                  help: PLUGIN_TOURCMS.BLUEPRINT.EXCLUDED_CATEGORY_HELP
+                  value_only: true
